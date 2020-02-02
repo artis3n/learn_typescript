@@ -1,12 +1,11 @@
-var person = {
-    name: 'Ari',
-    age: 25,
-    hobbies: ['Sports', 'Cooking']
-};
-var favoriteActivities;
-favoriteActivities = ['Sports'];
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+var userInput;
+var username;
+userInput = 5;
+userInput = 'Max';
+if (typeof userInput === 'string') {
+    username = userInput;
 }
+function generateError(message, code) {
+    throw { message: message, code: code };
+}
+generateError('An error occurred', 500);
