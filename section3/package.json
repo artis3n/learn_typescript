@@ -1,0 +1,24 @@
+{
+  "name": "template_setuo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc -w",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artis3n/learn_typescript.git"
+  },
+  "author": "Artis3n",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artis3n/learn_typescript/issues"
+  },
+  "homepage": "https://github.com/artis3n/learn_typescript#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
