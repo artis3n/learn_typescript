@@ -1,94 +1,24 @@
 "use strict";
-class Department {
-    constructor(id, name) {
-        this.id = id;
+let add;
+add = (n1, n2) => n1 + n2;
+let addI;
+addI = (n1, n2) => n1 + n2;
+class Person {
+    constructor(age, name) {
+        this.age = age;
         this.name = name;
-        this.employees = [];
+        if (name) {
+            this.name = name;
+        }
     }
-    static createEmployee(name) {
-        return {
-            name
-        };
-    }
-    addEmployee(employee) {
-        this.employees.push(employee);
-    }
-    printEmployeeInformation() {
-        console.log(this.employees.length);
-        console.log(this.employees);
+    greet(phrase) {
+        console.log(`${phrase} ${this.name}`);
     }
 }
-Department.fiscalYear = 2020;
-class ITDepartment extends Department {
-    constructor(id, admins = []) {
-        super(id, 'IT');
-        this.admins = admins;
-        this.admins.push('An admin');
-    }
-    describe() {
-        console.log(`IT department ID: ${this.id}`);
-    }
-    printAdminInformation() {
-        console.log(this.admins.length);
-        console.log(this.admins);
-    }
-}
-class AccountingDepartment extends Department {
-    constructor(id, reports = []) {
-        super(id, 'Accounting');
-        this.reports = reports;
-        this.lastReport = reports[0];
-    }
-    get mostRecentReport() {
-        if (this.lastReport) {
-            return this.lastReport;
-        }
-        throw new Error('No report found');
-    }
-    set mostRecentReport(value) {
-        if (!value) {
-            throw new Error('Please pass in a valid value');
-        }
-        this.addReport(value);
-    }
-    static getInstance() {
-        if (!AccountingDepartment.instance) {
-            this.instance = new AccountingDepartment('d3');
-        }
-        return this.instance;
-    }
-    describe() {
-        console.log(`Accounting Department ID: ${this.id}`);
-    }
-    addEmployee(name) {
-        if (name === 'Max') {
-            return;
-        }
-        this.employees.push(name);
-    }
-    addReport(text) {
-        this.reports.push(text);
-        this.lastReport = text;
-    }
-    printReports() {
-        console.log(this.reports);
-    }
-}
-const employee1 = Department.createEmployee('Max');
-console.log(employee1);
-const it = new ITDepartment('d2');
-it.describe();
-it.printAdminInformation();
-const newAccounting = AccountingDepartment.getInstance();
-const singletonAccounting = AccountingDepartment.getInstance();
-console.log(newAccounting === singletonAccounting);
-newAccounting.addReport('Something went wrong');
-console.log(newAccounting.mostRecentReport);
-newAccounting.mostRecentReport = 'A new report';
-console.log(newAccounting.mostRecentReport);
-newAccounting.addEmployee('Max');
-newAccounting.addEmployee('Manu');
-newAccounting.describe();
-newAccounting.printReports();
-newAccounting.printEmployeeInformation();
+let user1;
+user1 = new Person(26, 'Ari');
+user1.greet('Hi there - I am');
+const user2 = new Person(26);
+console.log(user1);
+console.log(user2);
 //# sourceMappingURL=app.js.map
