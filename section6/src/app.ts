@@ -20,6 +20,10 @@ type Combinable = string | number;
 type Numeric = number | boolean;
 type Universal = Combinable & Numeric;
 
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: number, b: string): string;
+function add(a: string, b: number): string;
 function add(a: Combinable, b: Combinable) {
     // This is a type guard
     if (typeof a === 'string' || typeof b === 'string') {
@@ -27,6 +31,25 @@ function add(a: Combinable, b: Combinable) {
     }
     return a + b;
 }
+
+const result = add(3, 'K');
+result.split(' ');
+const numResult = add(2, 5);
+
+const fetchUserData = {
+    id: 'u1',
+    name: 'Ari',
+    job: {
+        title: 'CEO',
+        description: 'My own company'
+    }
+};
+
+console.log(fetchUserData?.job?.title);
+
+const userInput = '';
+const store = userInput ?? 'DEFAULT';
+console.log(store);
 
 type UnknownEmployee = Employee | Admin;
 
@@ -99,3 +122,17 @@ function moveAnimal(animal: Animal) {
 }
 
 moveAnimal({ type: 'bird', flyingSpeed: 10 });
+
+const paragraph = <HTMLParagraphElement>document.getElementById('message-output');
+paragraph.innerHTML = 'Look this is added';
+const userInputElement = document.getElementById('user-input')! as HTMLInputElement;
+userInputElement.value = 'Hi there';
+
+interface ErrorContainer {
+    [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+    email: 'Not a valid email',
+    username: 'Must start with a capital character!'
+};
