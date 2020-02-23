@@ -1,6 +1,6 @@
-export function Autobind(_target: any, _methodName: string, descriptor: PropertyDescriptor) {
+export function Autobind(_target, _methodName, descriptor) {
     const originalMethod = descriptor.value;
-    const adjustedDescriptor: PropertyDescriptor = {
+    const adjustedDescriptor = {
         configurable: true,
         get() {
             return originalMethod.bind(this);
@@ -8,3 +8,4 @@ export function Autobind(_target: any, _methodName: string, descriptor: Property
     };
     return adjustedDescriptor;
 }
+//# sourceMappingURL=autobind.js.map
