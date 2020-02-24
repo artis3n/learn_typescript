@@ -1,0 +1,30 @@
+{
+  "name": "template_setuo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artis3n/learn_typescript.git"
+  },
+  "author": "Artis3n",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artis3n/learn_typescript/issues"
+  },
+  "homepage": "https://github.com/artis3n/learn_typescript#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "lite-server": "^2.5.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
